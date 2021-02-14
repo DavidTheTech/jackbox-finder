@@ -18,7 +18,7 @@ def test_room_code(code, csv_file=None):
         r = requests.get(url=jackbox_url)
         data = r.json()
         if r.status_code == 200:
-            return code
+            return code + " : " + data["joinAs"]
         return None
 
     except Exception as e:
